@@ -8,8 +8,8 @@ VS Code – For frontend (React/TypeScript/Tailwind CSS) development.
 
 ✅ Backend Stack
 
-Java 17
-Spring Boot (with Maven)
+Java 21
+Spring Boot 4.0.1(with Maven)
 
 
 ✅ Frontend Stack
