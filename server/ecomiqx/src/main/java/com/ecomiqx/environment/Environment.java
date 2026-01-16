@@ -2,7 +2,8 @@ package com.ecomiqx.environment;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
-public class Environment {
+public class Environment
+{
 
     /**
      * @Author: Brijesh Nishad
@@ -10,8 +11,10 @@ public class Environment {
      * Use this before SpringApplication.run() to make Spring Boot read them.
      */
 
-    public static void loadEnv() {
-        try {
+    public static void loadEnv()
+    {
+        try
+        {
             // Load .env from project root
             Dotenv dotenv = Dotenv.configure()
                     .filename(".env")        // .env file name
@@ -21,7 +24,8 @@ public class Environment {
             // Inject all variables into System properties
             dotenv.entries().forEach(entry -> {
                 // Only set if not already set in system env
-                if (System.getProperty(entry.getKey()) == null) {
+                if (System.getProperty(entry.getKey()) == null)
+                {
                     System.setProperty(entry.getKey(), entry.getValue());
                 }
             });
@@ -32,7 +36,8 @@ public class Environment {
                     System.out.println(entry.getKey() + "=" + entry.getValue())
             );
 
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             System.err.println("Failed to load .env file: " + e.getMessage());
 
         }
